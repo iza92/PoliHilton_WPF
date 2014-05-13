@@ -1,0 +1,36 @@
+﻿<Window x:Class="PoliHilton_Reloaded.Form8"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Form8" Width="491" Height="345" Background="{x:Null}" WindowStyle="None">
+
+    <Grid x:Name="LayoutRoot">
+        <Rectangle Fill="#598EACD8" Stroke="Black" MouseLeftButtonDown="DragForm"/>
+        <Rectangle Fill="#FF3169B9" Stroke="Black" Margin="8,23,8,8"/>
+        <TextBlock VerticalAlignment="Top" Text="User Login" TextWrapping="Wrap" Margin="189,0,189.483,0" Height="19.96" Foreground="Black" FontWeight="Bold" FontSize="14.667"/>
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Top" Text="X" TextWrapping="Wrap" Margin="0,3.493,8,0" FontSize="14.667" FontWeight="Bold" MouseLeftButtonDown="CloseForm"/>
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="30,51,0,0" VerticalAlignment="Top" Width="85" Style="{DynamicResource LabelStyle}"/>
+        <Label Content="Number:" HorizontalAlignment="Left" Margin="250,51,0,0" VerticalAlignment="Top" Width="85" Style="{DynamicResource LabelStyle}"/>
+        <Label Content="Floor:" HorizontalAlignment="Left" Margin="30,80,0,0" VerticalAlignment="Top" Width="85" Style="{DynamicResource LabelStyle}"/>
+        <Label Content="Capacity:" HorizontalAlignment="Left" Margin="250,80,0,0" VerticalAlignment="Top" Width="85" Style="{DynamicResource LabelStyle}"/>
+        <Label Content="Surface:" HorizontalAlignment="Left" Margin="30,109,0,0" VerticalAlignment="Top" Width="85" Style="{DynamicResource LabelStyle}"/>
+        <Label Content="Orientation:" HorizontalAlignment="Left" Margin="250,109,0,0" VerticalAlignment="Top" Width="85" Style="{DynamicResource LabelStyle}"/>
+        <Label Content="Check-in:" HorizontalAlignment="Left" Margin="30,151,0,0" VerticalAlignment="Top" Width="85" Style="{DynamicResource LabelStyle}"/>
+        <Label Content="Check-out:" HorizontalAlignment="Left" Margin="250,151,0,0" VerticalAlignment="Top" Width="85" Style="{DynamicResource LabelStyle}"/>
+        <Label Content="Price:" HorizontalAlignment="Left" Margin="115,196,0,0" VerticalAlignment="Top" Width="85" Style="{DynamicResource LabelStyle}"/>
+        <Label Content="Discount:" HorizontalAlignment="Left" Margin="115,230,0,0" VerticalAlignment="Top" Width="85" Style="{DynamicResource LabelStyle}"/>
+        <Label Content="Total:" FontWeight="Bold" HorizontalAlignment="Left" Margin="115,259,0,0" VerticalAlignment="Top" Width="85" Style="{DynamicResource LabelStyle}"/>
+        <TextBox x:Name="form8_tb_roomName" Margin="115,56,248,257" Style="{DynamicResource TextBoxStyle}"/>
+        <TextBox x:Name="form8_tb_roomNo" Margin="335,56,28,257" Style="{DynamicResource TextBoxStyle}"/>
+        <TextBox x:Name="form8_tb_roomFloor" Margin="115,85,248,228" Style="{DynamicResource TextBoxStyle}"/>
+        <TextBox x:Name="form8_tb_roomCap" Margin="335,85,28,228" Style="{DynamicResource TextBoxStyle}"/>
+        <TextBox x:Name="form8_tb_roomSurface" Margin="115,114,248,199" Style="{DynamicResource TextBoxStyle}"/>
+        <TextBox x:Name="form8_tb_roomOrientation" Margin="335,114,28,199" Style="{DynamicResource TextBoxStyle}"/>
+        <TextBox x:Name="form8_tb_roomPrice" Margin="189,201,174,112" Style="{DynamicResource TextBoxStyle}"/>
+        <TextBox x:Name="form8_tb_roomDisc" Margin="189,230,174,83" Style="{DynamicResource TextBoxStyle}"/>
+        <TextBox x:Name="form8_tb_total" Margin="189,259,174,54" Style="{DynamicResource TextBoxStyle}"/>
+        <DatePicker x:Name="form8_dtp_start" HorizontalAlignment="Left" Margin="115,151,0,0" VerticalAlignment="Top" Width="120"/>
+        <DatePicker x:Name="form8_dtp_end" HorizontalAlignment="Left" Margin="335,151,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="form8_btn_reserve" Content="Reserve" HorizontalAlignment="Left" Margin="60,293,0,0" VerticalAlignment="Top" Width="140" Height="25" Background="#FF7BADCF"/>
+        <Button x:Name="form8_btn_back" Content="Back" HorizontalAlignment="Left" Margin="290,293,0,0" VerticalAlignment="Top" Width="140" Height="25" Background="#FF7BADCF"/>
+    </Grid>
+</Window>

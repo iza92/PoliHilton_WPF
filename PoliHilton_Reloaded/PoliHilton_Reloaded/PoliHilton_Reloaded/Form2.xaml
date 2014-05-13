@@ -1,0 +1,12 @@
+﻿<Window x:Name="Form1" x:Class="PoliHilton_Reloaded.Form2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Form2" Width="491" Height="345" Background="{x:Null}" WindowStyle="None">
+
+    <Grid x:Name="LayoutRoot">
+        <Rectangle Fill="#598EACD8" Stroke="Black" MouseLeftButtonDown="DragForm"/>
+        <Rectangle Fill="#FF3169B9" Stroke="Black" Margin="8,23,8,8"/>
+        <TextBlock VerticalAlignment="Top" Text="User Login" TextWrapping="Wrap" Margin="189,0,189.483,0" Height="19.96" Foreground="Black" FontWeight="Bold" FontSize="14.667"/>
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Top" Text="X" TextWrapping="Wrap" Margin="0,3.493,8,0" FontSize="14.667" FontWeight="Bold" MouseLeftButtonDown="CloseForm"/>
+    </Grid>
+</Window>
