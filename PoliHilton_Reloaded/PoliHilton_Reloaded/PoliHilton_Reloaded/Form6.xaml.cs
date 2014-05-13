@@ -19,9 +19,15 @@ namespace PoliHilton_Reloaded
     /// </summary>
     public partial class Form6 : Window
     {
-        public Form6()
-        {
-            InitializeComponent();
+        Users u1;
+
+        public Form6(Users u1)
+        {           
+                InitializeComponent();    
+           this.u1 = u1;
+            long today = DateTime.Now.Ticks;
+            arrivalDate.BlackoutDates.Add(new CalendarDateRange(new DateTime(2010, 1, 1), new DateTime(today)));
+            departureDate.BlackoutDates.Add(new CalendarDateRange(new DateTime(2010, 1, 1), new DateTime(today)));
         }
         private void DragForm(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
@@ -32,5 +38,32 @@ namespace PoliHilton_Reloaded
         {
             this.Close();
         }
+
+        private void arrivalDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            departureDate.SelectedDate = null;
+            long lastBlackOut = arrivalDate.SelectedDate.Value.Ticks;
+            departureDate.BlackoutDates.Clear();
+            departureDate.BlackoutDates.Add(new CalendarDateRange(new DateTime(2010, 1, 1), new DateTime(lastBlackOut)));
+        }
+        private void Button_ToolTipOpening(object sender, ToolTipEventArgs e)
+        {
+            // ... Set ToolTip on Button before it is shown.
+            Button room = sender as Button;
+            char[] roomName = room.Name.ToCharArray();
+            char[] roomNumber = { roomName[6], roomName[7], roomName[8] };
+            String roomNo = new String(roomNumber);
+            room.ToolTip = "Status of room " + roomNo + ": \n";
+
+        }
+        private void go_button_click(object sender, RoutedEventArgs e)
+        {
+            Database database = new Database();
+            Booking booking = new Booking(database, this);
+            booking.getStatus(arrivalDate.SelectedDate.Value, departureDate.SelectedDate.Value, label1);
+        }
+
+
+
     }
 }

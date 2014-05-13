@@ -66,5 +66,12 @@ namespace PoliHilton_Reloaded
             u1.cancel_reservation(Form5_lb);
             u1.list_current_reservations(Form5_lb);
         }
+
+        private void form5_btn_seeMap_Click(object sender, RoutedEventArgs e)
+        {
+            Form6 f6=new Form6(u1);
+            f6.Show();
+            this.Hide();
+        }
     }
 }

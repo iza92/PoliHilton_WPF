@@ -6,13 +6,15 @@
     <Grid x:Name="LayoutRoot">
         <Rectangle Fill="#598EACD8" Stroke="Black" MouseLeftButtonDown="DragForm"/>
         <Rectangle Fill="#FF3169B9" Stroke="Black" Margin="8,23,8,8"/>
-        <TextBlock VerticalAlignment="Top" Text="User Login" TextWrapping="Wrap" Margin="189,0,189.483,0" Height="19.96" Foreground="Black" FontWeight="Bold" FontSize="14.667"/>
+        <TextBlock VerticalAlignment="Top" TextWrapping="Wrap" Margin="189,0,189.483,0" Height="19.96" Foreground="Black" FontWeight="Bold" FontSize="14.667"><Run Text="User "/><Run Language="ro-ro" Text="Menu"/></TextBlock>
         <TextBlock HorizontalAlignment="Right" VerticalAlignment="Top" Text="X" TextWrapping="Wrap" Margin="0,3.493,8,0" FontSize="14.667" FontWeight="Bold" MouseLeftButtonDown="CloseForm"/>
-        <ListBox x:Name="Form5_lb" HorizontalAlignment="Left" Height="160" Margin="20,65,0,0" VerticalAlignment="Top" Width="440"/>
-        <Button x:Name="form5_btn_getRes" Content="Current Reservations" HorizontalAlignment="Left" Margin="170,240,0,0" VerticalAlignment="Top" Width="140"  Click="form5_btn_getRes_Click" Height="25" Background="#FF7BADCF"/>
-        <Button x:Name="form5_btn_newRes" Content="New Reservation" HorizontalAlignment="Left" Margin="55,285,0,0" VerticalAlignment="Top" Width="140"  Click="form5_btn_newRes_Click" Height="25" Background="#FF7BADCF"/>
-        <Button x:Name="form5_btn_cancelRes" Content="Cancel Reservation" HorizontalAlignment="Left" Margin="270,285,0,0" VerticalAlignment="Top" Width="140"  Click="form5_btn_cancelRes_Click" Height="25" Background="#FF7BADCF"/>
+        <ListBox x:Name="Form5_lb" HorizontalAlignment="Left" Height="70" Margin="20,65,0,0" VerticalAlignment="Top" Width="440"/>
+        <Button x:Name="form5_btn_getRes" Content="Current Reservations" HorizontalAlignment="Left" Margin="170,150,0,0" VerticalAlignment="Top" Width="140"  Click="form5_btn_getRes_Click" Height="25" Background="#FF7BADCF"/>
+        <Button x:Name="form5_btn_newRes" Content="New Reservation" HorizontalAlignment="Left" Margin="50,195,0,0" VerticalAlignment="Top" Width="140"  Click="form5_btn_newRes_Click" Height="25" Background="#FF7BADCF"/>
+        <Button x:Name="form5_btn_cancelRes" Content="Cancel Reservation" HorizontalAlignment="Left" Margin="270,195,0,0" VerticalAlignment="Top" Width="140"  Click="form5_btn_cancelRes_Click" Height="25" Background="#FF7BADCF"/>
         <Label Content="Hello" HorizontalAlignment="Left" Margin="300,23,0,0" VerticalAlignment="Top" Width="50" Style="{DynamicResource LabelStyle}"/>
         <Label x:Name="Form5_label_name" HorizontalAlignment="Left" Margin="355,23,0,0" VerticalAlignment="Top" Width="105" Style="{DynamicResource LabelStyle}" Height="29"/>
+        <Label Content="... or click below for the interactive hotel map" FontWeight="SemiBold" Style="{DynamicResource LabelStyle}" HorizontalAlignment="Left" Margin="62,234,0,0" VerticalAlignment="Top" Width="348"/>
+        <Button x:Name="form5_btn_seeMap" Content="Hotel Map" HorizontalAlignment="Left" Margin="154,268,0,0" VerticalAlignment="Top" Width="140"  Click="form5_btn_seeMap_Click" Height="25" Background="#FF7BADCF"/>
     </Grid>
 </Window>
