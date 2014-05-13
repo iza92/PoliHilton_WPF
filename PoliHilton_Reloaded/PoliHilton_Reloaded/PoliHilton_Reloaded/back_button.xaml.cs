@@ -10,28 +10,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace PoliHilton_Reloaded
 {
     /// <summary>
-    /// Interaction logic for Form2.xaml
+    /// Interaction logic for back_button.xaml
     /// </summary>
-    public partial class Form2 : Window
+    public partial class back_button : UserControl
     {
-        public Form2()
+        public back_button()
         {
             InitializeComponent();
         }
-        private void DragForm(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            DragMove();
-        }
 
-        private void CloseForm(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void go_back(object sender, MouseButtonEventArgs e)
         {
-            for (int intCounter = App.Current.Windows.Count - 1; intCounter >= 0; intCounter--)
-                App.Current.Windows[intCounter].Close();
+            App.Current.Windows[App.Current.Windows.Count - 2].Show();
+            App.Current.Windows[App.Current.Windows.Count - 1].Close();
         }
     }
 }

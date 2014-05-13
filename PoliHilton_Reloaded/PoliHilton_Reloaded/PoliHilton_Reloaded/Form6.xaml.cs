@@ -20,11 +20,13 @@ namespace PoliHilton_Reloaded
     public partial class Form6 : Window
     {
         Users u1;
+        Database db1;
 
-        public Form6(Users u1)
-        {           
-                InitializeComponent();    
-           this.u1 = u1;
+        public Form6(Users u1, Database db1)
+        {
+            this.db1 = db1;
+            InitializeComponent();    
+            this.u1 = u1;
             long today = DateTime.Now.Ticks;
             arrivalDate.BlackoutDates.Add(new CalendarDateRange(new DateTime(2010, 1, 1), new DateTime(today)));
             departureDate.BlackoutDates.Add(new CalendarDateRange(new DateTime(2010, 1, 1), new DateTime(today)));
@@ -36,7 +38,8 @@ namespace PoliHilton_Reloaded
 
         private void CloseForm(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            this.Close();
+            for (int intCounter = App.Current.Windows.Count - 1; intCounter >= 0; intCounter--)
+                App.Current.Windows[intCounter].Close();
         }
 
         private void arrivalDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
@@ -64,6 +67,6 @@ namespace PoliHilton_Reloaded
         }
 
 
-
+       
     }
 }

@@ -30,7 +30,8 @@ namespace PoliHilton_Reloaded
 
         private void CloseForm(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            this.Close();
+            for (int intCounter = App.Current.Windows.Count - 1; intCounter >= 0; intCounter--)
+                App.Current.Windows[intCounter].Close();
         }
     }
 }

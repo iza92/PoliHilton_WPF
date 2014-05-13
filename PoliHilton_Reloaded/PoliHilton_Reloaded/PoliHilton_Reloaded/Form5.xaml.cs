@@ -46,7 +46,8 @@ namespace PoliHilton_Reloaded
 
         private void CloseForm(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            this.Close();
+            for (int intCounter = App.Current.Windows.Count - 1; intCounter >= 0; intCounter--)
+                App.Current.Windows[intCounter].Close();
         }
 
         private void form5_btn_newRes_Click(object sender, EventArgs e)
@@ -69,7 +70,7 @@ namespace PoliHilton_Reloaded
 
         private void form5_btn_seeMap_Click(object sender, RoutedEventArgs e)
         {
-            Form6 f6=new Form6(u1);
+            Form6 f6=new Form6(u1, db1);
             f6.Show();
             this.Hide();
         }

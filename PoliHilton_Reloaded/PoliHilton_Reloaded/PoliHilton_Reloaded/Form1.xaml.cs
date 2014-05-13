@@ -45,12 +45,13 @@ namespace PoliHilton_Reloaded
 
         private void CloseForm(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            this.Close();
+            for (int intCounter = App.Current.Windows.Count - 1; intCounter >= 0; intCounter--)
+                App.Current.Windows[intCounter].Close();
         }
 
         private void form1_button_signin_Click(object sender, RoutedEventArgs e)
         {
-            int id = auth1.login(form1_textBoxUsername.Text.ToString(), form1_textBoxPass.Text.ToString());
+            int id = auth1.login(form1_textBoxUsername.Text.ToString(), form1_textBoxPass.Password.ToString());
             switch (id)
             {
                 case 1: login_user(form1_textBoxUsername.Text.ToString()); this.Hide(); break;
@@ -62,17 +63,17 @@ namespace PoliHilton_Reloaded
 
         private void form1_button_signup_Click(object sender, RoutedEventArgs e)
         {
-            if (form1_tab2_firstName.Text == "" || form1_tab2_pass.Text == "" || form1_tab2_lastName.Text == "" || form1_tab2_username.Text == "")
+            if (form1_tab2_firstName.Text == "" || form1_tab2_pass.Password.ToString() == "" || form1_tab2_lastName.Text == "" || form1_tab2_username.Text == "")
             {
                 MessageBox.Show("The field must not be NULL");
             }
-            else if (form1_tab2_pass.Text != form1_tab2_confpass.Text)
+            else if (form1_tab2_pass.Password.ToString() != form1_tab2_confpass.Password.ToString())
             {
                 MessageBox.Show("passwords doesnt match");
             }
             else
             {
-                auth1.create_user(form1_tab2_username.Text, form1_tab2_pass.Text, form1_tab2_firstName.Text, form1_tab2_lastName.Text);
+                auth1.create_user(form1_tab2_username.Text, form1_tab2_pass.Password.ToString(), form1_tab2_firstName.Text, form1_tab2_lastName.Text);
             }
         }
         public void login_user(String username)

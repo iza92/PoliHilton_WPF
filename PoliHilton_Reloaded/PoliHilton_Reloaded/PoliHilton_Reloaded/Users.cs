@@ -14,7 +14,7 @@ namespace PoliHilton_Reloaded
      int id;
      String firstname;
      String lastname;
-     String username;
+     public String username;
      Form5 f5;
      Form6 f6;
      Form7 f7;

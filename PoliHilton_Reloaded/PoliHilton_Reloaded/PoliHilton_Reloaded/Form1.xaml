@@ -3,7 +3,7 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	x:Class="PoliHilton_Reloaded.Form1"
 	Title="Form1"
-	Width="491" Height="345" Background="{x:Null}" WindowStyle="None">
+	Width="491" Height="345" Background="{x:Null}" WindowStyle="None" WindowStartupLocation="CenterScreen" >
 
     <Grid x:Name="LayoutRoot">
         <Rectangle Fill="#598EACD8" Stroke="Black" MouseLeftButtonDown="DragForm"/>
@@ -15,9 +15,9 @@
                 <Grid Background="#FFE5E5E5">
                     <Label Content="Username:" HorizontalAlignment="Left" Margin="64,36,0,0" VerticalAlignment="Top" Width="85" Style="{DynamicResource LabelStyle}"/>
                     <Label Content="Password:" HorizontalAlignment="Left" Margin="64,85,0,0" VerticalAlignment="Top" Width="85" Style="{DynamicResource LabelStyle}"/>
-                    <TextBox x:Name="form1_textBoxPass"  Margin="168,90,111,105" Style="{DynamicResource TextBoxStyle}"/>
                     <TextBox x:Name="form1_textBoxUsername" Margin="168,41,111,154" Style="{DynamicResource TextBoxStyle}"/>
                     <Button x:Name="form1_button_signin" Content="Sign in" HorizontalAlignment="Left" Margin="168,143,0,0" VerticalAlignment="Top" Width="75" Style="{DynamicResource ButtonStyle}" Click="form1_button_signin_Click"/>
+                    <PasswordBox x:Name="form1_textBoxPass" HorizontalAlignment="Left" Margin="168,85,0,0" VerticalAlignment="Top" Width="120" Height="24"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="form1_tab2" Header="Sign up" Margin="87,0,-120,-1">
@@ -29,10 +29,10 @@
                     <TextBox x:Name="form1_tab2_firstName" Margin="174,10,105,185" Style="{DynamicResource TextBoxStyle}"/>
                     <TextBox x:Name="form1_tab2_lastName" Margin="174,39,105,156" Style="{DynamicResource TextBoxStyle}"/>
                     <TextBox x:Name="form1_tab2_username" Margin="174,68,105,127" Style="{DynamicResource TextBoxStyle}"/>
-                    <TextBox x:Name="form1_tab2_pass" Margin="174,97,105,98" Style="{DynamicResource TextBoxStyle}"/>
                     <Label Content="Confirm Password:" HorizontalAlignment="Left" Margin="10,126,0,0" VerticalAlignment="Top" Width="135" Style="{DynamicResource LabelStyle}"/>
-                    <TextBox x:Name="form1_tab2_confpass" Margin="174,126,105,69" Style="{DynamicResource TextBoxStyle}"/>
                     <Button x:Name="form1_button_signup" Content="Sign up" HorizontalAlignment="Left" Margin="174,173,0,0" VerticalAlignment="Top" Width="75" Style="{DynamicResource ButtonStyle}" Click="form1_button_signup_Click"/>
+                    <PasswordBox x:Name="form1_tab2_pass" HorizontalAlignment="Left" Margin="174,97,0,0" VerticalAlignment="Top" Width="120" Height="24"/>
+                    <PasswordBox x:Name="form1_tab2_confpass" HorizontalAlignment="Left" Margin="174,126,0,0" VerticalAlignment="Top" Width="120" Height="24"/>
                 </Grid>
             </TabItem>
         </TabControl>

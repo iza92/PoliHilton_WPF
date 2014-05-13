@@ -70,6 +70,9 @@
     </ApplicationDefinition>
     <Compile Include="Admin.cs" />
     <Compile Include="Auth.cs" />
+    <Compile Include="back_button.xaml.cs">
+      <DependentUpon>back_button.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Booking.cs" />
     <Compile Include="Cleaning.cs" />
     <Compile Include="Database.cs" />
@@ -77,8 +80,15 @@
       <DependentUpon>Form6.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="logout.xaml.cs">
+      <DependentUpon>logout.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Reception.cs" />
     <Compile Include="Users.cs" />
+    <Page Include="back_button.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Form1.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -116,6 +126,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Form8.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="logout.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -205,6 +219,12 @@
   <ItemGroup>
     <Resource Include="first_floor.png" />
     <Resource Include="second_floor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="back_button_blue.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logout_256.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
