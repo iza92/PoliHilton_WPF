@@ -23,6 +23,8 @@ namespace PoliHilton_Reloaded
         Database db1;
         Booking booking;
         int[] occupiedRooms=new int[100];
+        int selectedRoom;
+        
 
         public Form6(Users u1, Database db1)
         {
@@ -72,16 +74,35 @@ namespace PoliHilton_Reloaded
             String roomNo = new String(roomNumber);
             if(arrivalDate.SelectedDate!=null && departureDate.SelectedDate!=null)
                room.ToolTip = "Status of room " + roomNo + ":" + booking.toolTipText(arrivalDate.SelectedDate.Value, departureDate.SelectedDate.Value, Convert.ToInt32(roomNo), occupiedRooms);
+           
 
         }
+        
+
         private void form6_roomBtn_Click(object sender, RoutedEventArgs e)
         {
-            Button room = sender as Button;
-             char[] roomName = room.Name.ToCharArray();
-            char[] roomNumber = { roomName[6], roomName[7], roomName[8] };
-            String roomNo = new String(roomNumber);
-            selection_label.Content = "You have selected\n room "+roomNo;
-            //booking.getStatus(arrivalDate.SelectedDate.Value, departureDate.SelectedDate.Value);
+            if (arrivalDate.SelectedDate != null && departureDate.SelectedDate != null)
+            {
+                Button room = sender as Button;
+                char[] roomName = room.Name.ToCharArray();
+                char[] roomNumber = { roomName[6], roomName[7], roomName[8] };
+                String roomNo = new String(roomNumber);
+                selectedRoom = int.Parse(roomNo);
+                if (occupiedRooms.Contains(selectedRoom))
+                {
+                    selection_label.Content = "Room " + roomNo + " is \ncurrently occupied";
+                }
+                else
+                {
+                    selection_label.Content = "You have selected\nroom " + roomNo;
+                    form6_button_bookNow.Visibility = Visibility.Visible;
+                }
+            }
+        }
+
+        private void form6_button_bookNow_Click(object sender, RoutedEventArgs e)
+        {
+            Form8 f8 = new Form8(u1, selectedRoom, arrivalDate.SelectedDate.Value, departureDate.SelectedDate.Value);
         }
 
 

@@ -32,7 +32,7 @@
         <DatePicker x:Name="form8_dtp_start" HorizontalAlignment="Left" Margin="115,160,0,0" VerticalAlignment="Top" Width="120"/>
         <DatePicker x:Name="form8_dtp_end" HorizontalAlignment="Left" Margin="335,160,0,0" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="form8_btn_reserve" Content="Reserve" HorizontalAlignment="Left" Margin="60,293,0,0" VerticalAlignment="Top" Width="140" Height="25" Background="#FF7BADCF"/>
-        <Button x:Name="form8_btn_back" Content="Back" HorizontalAlignment="Left" Margin="290,293,0,0" VerticalAlignment="Top" Width="140" Height="25" Background="#FF7BADCF"/>
+        <Button x:Name="form8_btn_back" Content="Back" HorizontalAlignment="Left" Margin="290,293,0,0" VerticalAlignment="Top" Width="140" Height="25" Background="#FF7BADCF" Click="form8_btn_Back"/>
         <local:logout HorizontalAlignment="Left" Margin="436,26,0,0" VerticalAlignment="Top"/>
         <local:back_button HorizontalAlignment="Left" Margin="26,28,0,0" VerticalAlignment="Top"/>
     </Grid>
