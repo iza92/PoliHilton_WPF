@@ -20,6 +20,7 @@ namespace PoliHilton_Reloaded
     /// </summary>
     public partial class logout : UserControl
     {
+        Database database;
         public logout()
         {
             InitializeComponent();
@@ -27,10 +28,11 @@ namespace PoliHilton_Reloaded
 
         private void log_out(object sender, MouseButtonEventArgs e)
         {
-
+            
             for (int intCounter = App.Current.Windows.Count - 1; intCounter >= 1; intCounter--)
                 App.Current.Windows[intCounter].Close();
             App.Current.Windows[0].Show();
+            
         }
     }
 }

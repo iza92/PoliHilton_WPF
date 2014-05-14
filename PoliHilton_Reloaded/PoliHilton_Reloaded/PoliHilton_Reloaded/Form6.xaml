@@ -24,9 +24,12 @@
                 </Setter.Value>
             </Setter>
             <Style.Triggers>
+                
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Background" Value="DarkSlateBlue"/>
+                  
                 </Trigger>
+               
             </Style.Triggers>
 
         </Style>
@@ -137,14 +140,14 @@
                     <Grid.Background>
                         <ImageBrush ImageSource="first_floor.png"/>
                     </Grid.Background>
-                    <Button x:Name="button101" HorizontalAlignment="Left" Margin="20,58.29,0,0" VerticalAlignment="Top" Width="91" Height="46.25" Style="{StaticResource RoomButton}" ToolTipOpening="Button_ToolTipOpening"/>
-                    <Button x:Name="button102" HorizontalAlignment="Left" Margin="20,104.54,0,0" VerticalAlignment="Top" Width="91" Height="41.5" Style="{StaticResource RoomButton}" ToolTipOpening="Button_ToolTipOpening"/>
-                    <Button x:Name="button103" HorizontalAlignment="Left" Margin="20,146.04,0,0" VerticalAlignment="Top" Width="91" Height="41.917" Style="{StaticResource RoomButton}" ToolTipOpening="Button_ToolTipOpening"/>
+                    <Button x:Name="button101" HorizontalAlignment="Left" Margin="20,58.29,0,0" VerticalAlignment="Top" Width="91" Height="46.25" Style="{StaticResource RoomButton}" ToolTipOpening="Button_ToolTipOpening" Click="form6_roomBtn_Click"/>
+                    <Button x:Name="button102" HorizontalAlignment="Left" Margin="20,104.54,0,0" VerticalAlignment="Top" Width="91" Height="41.5" Style="{StaticResource RoomButton}" ToolTipOpening="Button_ToolTipOpening" Click="form6_roomBtn_Click"/>
+                    <Button x:Name="button103" HorizontalAlignment="Left" Margin="20,146.04,0,0" VerticalAlignment="Top" Width="91" Height="41.917" Style="{StaticResource RoomButton}" ToolTipOpening="Button_ToolTipOpening" Click="form6_roomBtn_Click"/>
                     <Button x:Name="button104" HorizontalAlignment="Left" Margin="20,187.957,0,163.333" Width="91" Style="{StaticResource RoomButton}"  ToolTipOpening="Button_ToolTipOpening"/>
-                    <Button x:Name="button105" HorizontalAlignment="Left" Margin="20,0,0,116.083" VerticalAlignment="Bottom" Width="91" Height="43.25" Style="{StaticResource RoomButton}" ToolTipOpening="Button_ToolTipOpening"/>
-                    <Button x:Name="button106" HorizontalAlignment="Left" Margin="20,0,0,73.666" VerticalAlignment="Bottom" Width="91" Height="42.417" Style="{StaticResource RoomButton}" ToolTipOpening="Button_ToolTipOpening"/>
-                    <Button x:Name="button107" HorizontalAlignment="Left" Margin="20,0,0,27.416" VerticalAlignment="Bottom" Width="130.25" Height="46.25" Style="{StaticResource RoomButton}" ToolTipOpening="Button_ToolTipOpening"/>
-                    <Button x:Name="button108" Margin="255.414,39.047,302.225,0" VerticalAlignment="Top" Height="51.335" Style="{StaticResource RoomButton}" RenderTransformOrigin="0.76,0.555" ToolTipOpening="Button_ToolTipOpening">
+                    <Button x:Name="button105" HorizontalAlignment="Left" Margin="20,0,0,116.083" VerticalAlignment="Bottom" Width="91" Height="43.25" Style="{StaticResource RoomButton}" ToolTipOpening="Button_ToolTipOpening" Click="form6_roomBtn_Click"/>
+                    <Button x:Name="button106" HorizontalAlignment="Left" Margin="20,0,0,73.666" VerticalAlignment="Bottom" Width="91" Height="42.417" Style="{StaticResource RoomButton}" ToolTipOpening="Button_ToolTipOpening" Click="form6_roomBtn_Click"/>
+                    <Button x:Name="button107" HorizontalAlignment="Left" Margin="20,0,0,27.416" VerticalAlignment="Bottom" Width="130.25" Height="46.25" Style="{StaticResource RoomButton}" ToolTipOpening="Button_ToolTipOpening" Click="form6_roomBtn_Click"/>
+                    <Button x:Name="button108" Margin="255.414,39.047,302.225,0" VerticalAlignment="Top" Height="51.335" Style="{StaticResource RoomButton}" RenderTransformOrigin="0.76,0.555" ToolTipOpening="Button_ToolTipOpening" Click="form6_roomBtn_Click">
                         <Button.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform ScaleX="1.003"/>
@@ -154,7 +157,7 @@
                             </TransformGroup>
                         </Button.RenderTransform>
                     </Button>
-                    <Button x:Name="button109" Margin="325.36,68.846,265.146,0" VerticalAlignment="Top" Height="51.335" Style="{StaticResource RoomButton}" RenderTransformOrigin="0.76,0.555" ToolTipOpening="Button_ToolTipOpening">
+                    <Button x:Name="button109" Margin="325.36,68.846,265.146,0" VerticalAlignment="Top" Height="51.335" Style="{StaticResource RoomButton}" RenderTransformOrigin="0.76,0.555" ToolTipOpening="Button_ToolTipOpening" Click="form6_roomBtn_Click">
                         <Button.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform ScaleX="1.003"/>
@@ -164,7 +167,7 @@
                             </TransformGroup>
                         </Button.RenderTransform>
                     </Button>
-                    <Button x:Name="button110" Margin="0,104.898,229.053,0" VerticalAlignment="Top" Height="45.491" Style="{StaticResource RoomButton}" RenderTransformOrigin="0.76,0.555" HorizontalAlignment="Right" Width="79.494" ToolTipOpening="Button_ToolTipOpening">
+                    <Button x:Name="button110" Margin="0,104.898,229.053,0" VerticalAlignment="Top" Height="45.491" Style="{StaticResource RoomButton}" RenderTransformOrigin="0.76,0.555" HorizontalAlignment="Right" Width="79.494" ToolTipOpening="Button_ToolTipOpening" Click="form6_roomBtn_Click">
                         <Button.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform ScaleX="1.003"/>
@@ -174,7 +177,7 @@
                             </TransformGroup>
                         </Button.RenderTransform>
                     </Button>
-                    <Button x:Name="button111" Margin="0,135.898,194.553,0" VerticalAlignment="Top" Height="45.491" Style="{StaticResource RoomButton}" RenderTransformOrigin="0.76,0.555" HorizontalAlignment="Right" Width="79.494" ToolTipOpening="Button_ToolTipOpening">
+                    <Button x:Name="button111" Margin="0,135.898,194.553,0" VerticalAlignment="Top" Height="45.491" Style="{StaticResource RoomButton}" RenderTransformOrigin="0.76,0.555" HorizontalAlignment="Right" Width="79.494" ToolTipOpening="Button_ToolTipOpening" Click="form6_roomBtn_Click">
                         <Button.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform ScaleX="1.003"/>
@@ -184,10 +187,9 @@
                             </TransformGroup>
                         </Button.RenderTransform>
                     </Button>
-                    <Button x:Name="button112" HorizontalAlignment="Right" Margin="0,142.873,122.333,189.167" Style="{DynamicResource Button112}" Width="121" Content="" ToolTip="" ToolTipOpening="Button_ToolTipOpening"/>
-                    <Button x:Name="button113" HorizontalAlignment="Right" Margin="0,0,16.25,27.416" Style="{DynamicResource Button113}" VerticalAlignment="Bottom" Width="78" Height="77.834" Content="" ToolTip="" ToolTipOpening="Button_ToolTipOpening"/>
-                    <Label x:Name="label1" Content="Label" HorizontalAlignment="Left" Margin="510,46,0,0" VerticalAlignment="Top" Width="96"/>
-                    <Button x:Name="button_go" Content="Go" HorizontalAlignment="Left" Margin="493,26,0,0" VerticalAlignment="Top" Width="75" Click="go_button_click"/>
+                    <Button x:Name="button112" HorizontalAlignment="Right" Margin="0,142.873,122.333,189.167" Style="{DynamicResource Button112}" Width="121" Content="" ToolTip="" ToolTipOpening="Button_ToolTipOpening" Click="form6_roomBtn_Click"/>
+                    <Button x:Name="button113" HorizontalAlignment="Right" Margin="0,0,16.25,27.416" Style="{DynamicResource Button113}" VerticalAlignment="Bottom" Width="78" Height="77.834" Content="" ToolTip="" ToolTipOpening="Button_ToolTipOpening" Click="form6_roomBtn_Click"/>
+                    <Label x:Name="selection_label"  HorizontalAlignment="Left" Margin="510,46,0,0" VerticalAlignment="Top"  Style="{DynamicResource LabelStyle}"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Second Floor" Margin="148,-9,-358,-2">
@@ -250,9 +252,10 @@
         <DatePicker x:Name="arrivalDate" Text="Arrival" HorizontalAlignment="Left" VerticalAlignment="Top" Width="164" Height="23" IsTodayHighlighted="True" Margin="95,60,0,0" Foreground="#FF333333" DisplayDateStart="2010-01-01" SelectedDateChanged="arrivalDate_SelectedDateChanged" BorderBrush="{x:Null}"/>
         <Label Content="Arrival" HorizontalAlignment="Left" Margin="26,60,0,0" VerticalAlignment="Top" Width="52"/>
         <Label Content="Departure" HorizontalAlignment="Left" Margin="284,59,0,0" VerticalAlignment="Top" Width="66"/>
-        <DatePicker x:Name="departureDate" Text="Departure" HorizontalAlignment="Left" VerticalAlignment="Top" Width="164" Height="23" IsTodayHighlighted="True" Margin="355,61,0,0" Foreground="#FF333333" DisplayDateStart="2010-01-01" BorderBrush="{x:Null}"/>
-        
+        <DatePicker x:Name="departureDate" Text="Departure" HorizontalAlignment="Left" VerticalAlignment="Top" Width="164" Height="23" IsTodayHighlighted="True" Margin="355,61,0,0" Foreground="#FF333333" DisplayDateStart="2010-01-01" BorderBrush="{x:Null}" SelectedDateChanged="departureDate_SelectedDateChanged"/>
+
         <local:logout HorizontalAlignment="Left" Margin="685,28,0,0" VerticalAlignment="Top"/>
         <local:back_button HorizontalAlignment="Left" Margin="26,28,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="form6_label_user"  HorizontalContentAlignment="Right" FontWeight="SemiBold"  Margin="585,28,56,0" VerticalAlignment="Top" Width="95" Style="{DynamicResource LabelStyle}" Height="27"/>
     </Grid>
 </Window>
