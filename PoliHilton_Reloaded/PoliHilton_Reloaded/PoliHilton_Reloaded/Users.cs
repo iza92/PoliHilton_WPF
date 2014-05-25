@@ -11,7 +11,7 @@ namespace PoliHilton_Reloaded
     public class Users
     {
      Database db1;
-     int id;
+     public int id;
      String firstname;
      String lastname;
      public String username;

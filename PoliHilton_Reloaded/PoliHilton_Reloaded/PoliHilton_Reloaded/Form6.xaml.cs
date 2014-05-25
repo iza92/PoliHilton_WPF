@@ -23,8 +23,11 @@ namespace PoliHilton_Reloaded
         Database db1;
         Booking booking;
         int[] occupiedRooms=new int[100];
-        int selectedRoom;
-        
+        String[] occupiedUntil = new String[100];
+        String[] guests = new String[100];
+        int[] discounts = new int[300];
+        int selectedRoom, i=0;
+        Button selected;
 
         public Form6(Users u1, Database db1)
         {
@@ -35,8 +38,8 @@ namespace PoliHilton_Reloaded
             long today = DateTime.Now.Ticks;
             arrivalDate.BlackoutDates.Add(new CalendarDateRange(new DateTime(2010, 1, 1), new DateTime(today)));
             departureDate.BlackoutDates.Add(new CalendarDateRange(new DateTime(2010, 1, 1), new DateTime(today)));
-            booking = new Booking(db1, this);
-            
+            booking = new Booking(db1, this, u1);
+            selected = new Button();
         }
         private void DragForm(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
@@ -55,6 +58,7 @@ namespace PoliHilton_Reloaded
             selection_label.Content = "";
             departureDate.SelectedDate = null;
             long lastBlackOut = arrivalDate.SelectedDate.Value.Ticks;
+            departureDate.SelectedDate = null;
             departureDate.BlackoutDates.Clear();
             departureDate.BlackoutDates.Add(new CalendarDateRange(new DateTime(2010, 1, 1), new DateTime(lastBlackOut)));
         }
@@ -62,7 +66,10 @@ namespace PoliHilton_Reloaded
         private void departureDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             selection_label.Content="";
-            occupiedRooms = booking.getStatus(arrivalDate.SelectedDate.Value, departureDate.SelectedDate.Value);
+            occupiedRooms = null;
+            color_legend.Visibility = Visibility.Visible;
+            if(departureDate.SelectedDate!=null)
+             occupiedRooms = booking.getStatus(arrivalDate.SelectedDate.Value, departureDate.SelectedDate.Value, occupiedUntil, guests);
         }
 
         private void Button_ToolTipOpening(object sender, ToolTipEventArgs e)
@@ -73,16 +80,18 @@ namespace PoliHilton_Reloaded
             char[] roomNumber = { roomName[6], roomName[7], roomName[8] };
             String roomNo = new String(roomNumber);
             if(arrivalDate.SelectedDate!=null && departureDate.SelectedDate!=null)
-               room.ToolTip = "Status of room " + roomNo + ":" + booking.toolTipText(arrivalDate.SelectedDate.Value, departureDate.SelectedDate.Value, Convert.ToInt32(roomNo), occupiedRooms);
-           
+               room.ToolTip = "Status of room " + roomNo + ": " + booking.toolTipText(arrivalDate.SelectedDate.Value, departureDate.SelectedDate.Value, Convert.ToInt32(roomNo), occupiedRooms, occupiedUntil, guests);
+            else room.ToolTip = "Room " + roomNo + "\n" + booking.toolTipText(Convert.ToInt32(roomNo));
 
         }
-        
 
+        Button clickedRoom;
         private void form6_roomBtn_Click(object sender, RoutedEventArgs e)
         {
+            clickedRoom = sender as Button;       
             if (arrivalDate.SelectedDate != null && departureDate.SelectedDate != null)
             {
+                
                 Button room = sender as Button;
                 char[] roomName = room.Name.ToCharArray();
                 char[] roomNumber = { roomName[6], roomName[7], roomName[8] };
@@ -90,19 +99,46 @@ namespace PoliHilton_Reloaded
                 selectedRoom = int.Parse(roomNo);
                 if (occupiedRooms.Contains(selectedRoom))
                 {
+                    form6_button_bookNow.Visibility = Visibility.Hidden;
                     selection_label.Content = "Room " + roomNo + " is \ncurrently occupied";
                 }
                 else
-                {
-                    selection_label.Content = "You have selected\nroom " + roomNo;
+                {   selection_label.Content = "You have selected\n   room " + roomNo;
                     form6_button_bookNow.Visibility = Visibility.Visible;
+                    String name = "button" + roomNo;
+                    object item = LayoutRoot.FindName(name);
+                    if (item is Button)
+                    {
+                        if (i != 0)
+                        { selected.ClearValue(Button.BackgroundProperty); }
+                        if (selected != room)
+                        {
+                            occupiedRooms = booking.getStatus(arrivalDate.SelectedDate.Value, departureDate.SelectedDate.Value, occupiedUntil, guests);
+
+                            room.Background = new SolidColorBrush(Colors.Green);
+                            //path112.Fill = new SolidColorBrush(Colors.AliceBlue);
+                            room.Opacity = 0.4;
+
+                        }
+                        else { selection_label.Content = "";
+                               form6_button_bookNow.Visibility = Visibility.Hidden;
+                               occupiedRooms = booking.getStatus(arrivalDate.SelectedDate.Value, departureDate.SelectedDate.Value, occupiedUntil, guests);
+
+                        }
+                        selected = room;
+                        i++;
+                       
+                    }
                 }
             }
+            else selection_label.Content = "Please select arrival and\n   departure dates";
         }
 
         private void form6_button_bookNow_Click(object sender, RoutedEventArgs e)
-        {
-            Form8 f8 = new Form8(u1, selectedRoom, arrivalDate.SelectedDate.Value, departureDate.SelectedDate.Value);
+        {   char[] roomName = clickedRoom.Name.ToCharArray();
+             char[] roomNumber = { roomName[6], roomName[7], roomName[8] };
+             String roomNo = new String(roomNumber);
+             Form8 f8 = new Form8(db1, u1, selectedRoom, arrivalDate.SelectedDate.Value, departureDate.SelectedDate.Value, booking.getRoomData(Int32.Parse(roomNo)));
         }
 
 

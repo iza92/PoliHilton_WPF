@@ -21,8 +21,7 @@ namespace PoliHilton_Reloaded
     {
          Users u1;
         int room_number;
-        DateTime startDate;
-        DateTime endDate;
+        Database database;
         public Form8(Users u1,int room_number,DateTime s,DateTime e)
         {
             InitializeComponent();
@@ -35,6 +34,25 @@ namespace PoliHilton_Reloaded
             u1.fill_room_fields_final(form8_tb_roomName, form8_tb_roomNo, form8_tb_roomFloor, form8_tb_roomCap, form8_tb_roomSurface,form8_tb_roomOrientation,form8_tb_roomPrice,form8_tb_roomDisc,form8_tb_total,room_number);
         }
 
+        public Form8(Database db1, Users u1, int room_number, DateTime s, DateTime e, String[] data)
+        {
+            InitializeComponent();
+            this.u1 = u1;
+            this.room_number = room_number;
+            this.Show();
+            this.database = db1;
+            form8_dtp_start.SelectedDate = s.Date;
+            form8_dtp_end.SelectedDate = e.Date;
+            form8_tb_roomName.Text = data[0];
+            form8_tb_roomNo.Text = data[1];
+            form8_tb_roomFloor.Text = data[2];
+            form8_tb_roomOrientation.Text = data[3];
+            form8_tb_roomSurface.Text = data[4];
+            form8_tb_roomCap.Text = data[5];
+            form8_tb_roomPrice.Text = data[6];
+            form8_tb_roomDisc.Text = data[7];
+            form8_tb_total.Text = data[8];
+        }
         
        
         private void form8_btn_reserve_Click(object sender, EventArgs e)
@@ -66,5 +84,11 @@ namespace PoliHilton_Reloaded
         {
             this.Close();
         }
+/*
+        private void form8_btn_Reserve(object sender, RoutedEventArgs e)
+        {
+            String command = "INSERT INTO [polihilton].[dbo].[Rezervations] (u_id,r_id,start_date,end_date,rez_price)Values('" + u1.id + "','" + room_id + "',Convert(datetime,'" + start + "'),Convert(datetime,'" + start + "'),'" + total + "')";
+            database.Command(command);
+        } */
     }
 }

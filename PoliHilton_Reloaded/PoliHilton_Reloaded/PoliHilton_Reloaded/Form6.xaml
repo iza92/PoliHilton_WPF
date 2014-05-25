@@ -24,104 +24,91 @@
                 </Setter.Value>
             </Setter>
             <Style.Triggers>
-                
+
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Background" Value="DarkSlateBlue"/>
-                  
+
                 </Trigger>
-               
+
             </Style.Triggers>
 
         </Style>
 
         <Style x:Key="Button112" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Transparent"></Setter>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Grid Margin="0.418,-1.553,0.619,3.113">
-                            <Path x:Name="path" Fill="Beige" Opacity="0.0" Stretch="Fill" Stroke="{x:Null}" HorizontalAlignment="Stretch" Margin="0" Width="Auto" Data="M0.39548567,49.940107 C57.145486,-0.30989299 57.406822,-1.9990635 57.926167,-1.5191881 120.42617,56.230856 119.37416,56.498424 119.37416,56.498424 98.124159,72.998519 97.341182,73.651391 97.341182,73.651391 23.591182,74.151395 25.121535,73.651391 25.121535,73.651391 0.37153457,49.901253 0.39548567,49.940107 0.39548567,49.940107 z"/>
+
+                            <Path x:Name="path112" Fill="{Binding Path=Background, RelativeSource={RelativeSource AncestorType={x:Type Button}}}"  Stretch="Fill" Stroke="{x:Null}" HorizontalAlignment="Stretch" Margin="0" Width="Auto" Data="M0.39548567,49.940107 C57.145486,-0.30989299 57.406822,-1.9990635 57.926167,-1.5191881 120.42617,56.230856 119.37416,56.498424 119.37416,56.498424 98.124159,72.998519 97.341182,73.651391 97.341182,73.651391 23.591182,74.151395 25.121535,73.651391 25.121535,73.651391 0.37153457,49.901253 0.39548567,49.940107 0.39548567,49.940107 z"/>
+
                         </Grid>
                         <ControlTemplate.Triggers>
-                            <Trigger Property="IsCancel" Value="False"/>
-                            <Trigger Property="IsFocused" Value="True">
-                                <Setter Property="Fill" TargetName="path" Value="#FF120D3F"/>
-                            </Trigger>
-                            <Trigger Property="IsDefaulted" Value="True"/>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Fill" TargetName="path" Value="DarkSlateBlue"/>
-                                <Setter Property="Opacity" TargetName="path" Value="0.4"/>
+                                <Setter Property="Background"  Value="DarkSlateBlue"/>
+                                <Setter Property="Opacity" Value="0.4"></Setter>
+
                             </Trigger>
-                            <Trigger Property="IsPressed" Value="True"/>
-                            <Trigger Property="IsEnabled" Value="False"/>
+
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
         <Style x:Key="Button113" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Transparent"></Setter>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Grid>
-                            <Path x:Name="path" Fill="#FF8E2424" Stretch="Fill" Opacity="0.0" Stroke="{x:Null}" Data="M575.33333,304.87333 C651.33333,305.20667 651.33365,305.20699 651.33365,305.20699 620.33383,380.13463 620.16716,380.46764 620.16716,380.46764 576.16698,380.30114 576.16698,380.30114 576.16698,380.30114 575.50031,305.04016 575.33333,304.87333 575.33333,304.87333 z"/>
+                            <Path x:Name="path" Fill="{Binding Path=Background, RelativeSource={RelativeSource AncestorType={x:Type Button}}}" Stretch="Fill"  Stroke="{x:Null}" Data="M575.33333,304.87333 C651.33333,305.20667 651.33365,305.20699 651.33365,305.20699 620.33383,380.13463 620.16716,380.46764 620.16716,380.46764 576.16698,380.30114 576.16698,380.30114 576.16698,380.30114 575.50031,305.04016 575.33333,304.87333 575.33333,304.87333 z"/>
                             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" RecognizesAccessKey="True"/>
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Fill" TargetName="path" Value="DarkSlateBlue"/>
-                                <Setter Property="Opacity" TargetName="path" Value="0.4"/>
+                                <Setter Property="Background"  Value="DarkSlateBlue"/>
+                                <Setter Property="Opacity" Value="0.4"></Setter>
                             </Trigger>
-                            <Trigger Property="IsFocused" Value="True"/>
-                            <Trigger Property="IsDefaulted" Value="True"/>
-                            <Trigger Property="IsMouseOver" Value="True"/>
-                            <Trigger Property="IsPressed" Value="True"/>
-                            <Trigger Property="IsEnabled" Value="False"/>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
         <Style x:Key="Button205" TargetType="{x:Type Button}">
-            <Setter Property="Background" Value="AliceBlue"/>
+            <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Grid>
-                            <Path x:Name="path" Fill="#FFA34C4C" Stretch="Fill" Stroke="#FF5F2626" Data="M47.333333,247.04 C160.33333,246.70667 159.83367,246.20666 159.83367,246.20666 158.83404,379.92567 158.83404,379.92567 158.83404,379.92567 130.50061,382.92718 130.50061,382.92718 130.50061,382.92718 100.16718,379.59286 100.16718,379.59286 100.16718,379.59286 71.833748,367.2546 71.833748,367.2546 71.833748,367.2546 53.833687,346.57969 53.833687,346.57969 53.833687,346.57969 44.833657,319.23545 44.833657,319.23545 44.833657,319.23545 40.833988,291.22428 40.833988,291.22428&#xA;40.833988,291.22428 46.834307,247.5402 47.333333,247.04 47.333333,247.04 z" Opacity="0"/>
+                            <Path x:Name="path" Fill="{Binding Path=Background, RelativeSource={RelativeSource AncestorType={x:Type Button}}}" Stretch="Fill"  VerticalAlignment="Bottom" Data="M47,247.54 C160,248.04 159.5,247.54 159.5,247.54 159.50005,379.67616 159.5,379.17564 159.5,379.17564 129.50003,383.17979 129.50003,383.17979 129.50003,383.17979 99.500021,379.67617 99.500021,379.67617 99.500021,379.67617 72.50001,366.66276 72.50001,366.66276 72.50001,366.66276 54.000003,346.64212 54.000003,346.64212 54.000003,346.64212 43.999999,318.61324 43.999999,318.61324 43.999999,318.61324 40.499999,290.08384 40.499999,290.08384&#xd;&#xa;40.499999,290.08384 47.000003,247.03948 47,247.54 47,247.54 z" Height="128" Margin="0,0,-5,10" />
                             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" RecognizesAccessKey="True"/>
                         </Grid>
                         <ControlTemplate.Triggers>
-                            <Trigger Property="IsFocused" Value="True"/>
-                            <Trigger Property="IsDefaulted" Value="True"/>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Fill" TargetName="path" Value="DarkSlateBlue"/>
-                                <Setter Property="Opacity" TargetName="path" Value="0.4"/>
+                                <Setter Property="Background"  Value="DarkSlateBlue"/>
+                                <Setter Property="Opacity" Value="0.4"></Setter>
                             </Trigger>
-                            <Trigger Property="IsPressed" Value="True"/>
-                            <Trigger Property="IsEnabled" Value="False"/>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
         <Style x:Key="Button211" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Transparent"></Setter>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Grid>
-                            <Path x:Name="path" Fill="#FFA34C4C" Stretch="Fill" Stroke="#FF5F2626" Opacity="0" Data="M511.33333,255.37333 C570.66667,203.37333 570.16701,202.87367 570.16701,202.87367 662.16642,289.54012 662.16642,289.54012 662.16642,289.54012 647.24953,324.78991 647.24953,324.78991 647.24953,324.78991 641.74956,332.28987 641.74956,332.28987 641.74956,332.28987 619.99969,352.28973 619.99969,352.28973 619.99969,352.28973 589.99987,365.28965 589.99987,365.28965 589.99987,365.28965 566.16668,369.20628 566.16668,369.53962 566.16668,369.53962 544.83348,370.37294 544.83348,370.37294&#xA;544.83348,370.37294 525.33359,370.37326 525.16693,370.37294 525.16693,370.37294 508.83369,369.37341 508.83369,369.37341 508.83369,369.37341 510.834,255.20715 511.33333,255.37333 511.33333,255.37333 z"/>
+                            <Path x:Name="path" Fill="{Binding Path=Background, RelativeSource={RelativeSource AncestorType={x:Type Button}}}" Stretch="Fill" Data="M511.33333,255.37333 C570.66667,203.37333 570.16701,202.87367 570.16701,202.87367 662.16642,289.54012 662.16642,289.54012 662.16642,289.54012 647.24953,324.78991 647.24953,324.78991 647.24953,324.78991 641.74956,332.28987 641.74956,332.28987 641.74956,332.28987 619.99969,352.28973 619.99969,352.28973 619.99969,352.28973 589.99987,365.28965 589.99987,365.28965 589.99987,365.28965 566.16668,369.20628 566.16668,369.53962 566.16668,369.53962 544.83348,370.37294 544.83348,370.37294&#xA;544.83348,370.37294 525.33359,370.37326 525.16693,370.37294 525.16693,370.37294 508.83369,369.37341 508.83369,369.37341 508.83369,369.37341 510.834,255.20715 511.33333,255.37333 511.33333,255.37333 z" Margin="0,-10,0,0"/>
                             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" RecognizesAccessKey="True"/>
                         </Grid>
                         <ControlTemplate.Triggers>
-                            <Trigger Property="IsCancel" Value="False"/>
-                            <Trigger Property="IsFocused" Value="True"/>
-                            <Trigger Property="IsDefaulted" Value="True"/>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Fill" TargetName="path" Value="DarkSlateBlue"/>
-                                <Setter Property="Opacity" TargetName="path" Value="0.4"/>
+                                <Setter Property="Background"  Value="DarkSlateBlue"/>
+                                <Setter Property="Opacity" Value="0.4"></Setter>
                             </Trigger>
-                            <Trigger Property="IsPressed" Value="True"/>
-                            <Trigger Property="IsEnabled" Value="False"/>
+
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
@@ -187,9 +174,9 @@
                             </TransformGroup>
                         </Button.RenderTransform>
                     </Button>
-                    <Button x:Name="button112" HorizontalAlignment="Right" Margin="0,142.873,122.333,189.167" Style="{DynamicResource Button112}" Width="121" Content="" ToolTip="" ToolTipOpening="Button_ToolTipOpening" Click="form6_roomBtn_Click"/>
+                    <Button x:Name="button112" HorizontalAlignment="Right" Margin="0,140,124,192.04" Style="{DynamicResource Button112}" Width="121" Content="" ToolTip="" ToolTipOpening="Button_ToolTipOpening" Click="form6_roomBtn_Click"/>
                     <Button x:Name="button113" HorizontalAlignment="Right" Margin="0,0,16.25,27.416" Style="{DynamicResource Button113}" VerticalAlignment="Bottom" Width="78" Height="77.834" Content="" ToolTip="" ToolTipOpening="Button_ToolTipOpening" Click="form6_roomBtn_Click"/>
-                   
+
                 </Grid>
             </TabItem>
             <TabItem Header="Second Floor" Margin="148,-9,-358,-2">
@@ -197,11 +184,11 @@
                     <Grid.Background>
                         <ImageBrush ImageSource="second_floor.png"/>
                     </Grid.Background>
-                    <Button x:Name="button201" HorizontalAlignment="Left" Margin="48.75,54.123,0,0" VerticalAlignment="Top" Width="82.75" Height="43" Style="{StaticResource RoomButton}" ToolTipOpening="Button_ToolTipOpening"/>
-                    <Button x:Name="button202" HorizontalAlignment="Left" Margin="48.75,97.123,0,0" VerticalAlignment="Top" Width="82.75" Height="43" Style="{StaticResource RoomButton}" ToolTipOpening="Button_ToolTipOpening"/>
-                    <Button x:Name="button203" HorizontalAlignment="Left" Margin="48.75,142.873,0,0" VerticalAlignment="Top" Width="82.75" Height="52" Style="{StaticResource RoomButton}" ToolTipOpening="Button_ToolTipOpening"/>
-                    <Button x:Name="button204" HorizontalAlignment="Left" Margin="48.75,0,0,155.667" VerticalAlignment="Bottom" Width="82.75" Height="37.5" Style="{StaticResource RoomButton}"  ToolTipOpening="Button_ToolTipOpening"/>
-                    <Button x:Name="button206" Margin="275.414,35.714,382.225,0" VerticalAlignment="Top" Height="51.335" Style="{StaticResource RoomButton}" RenderTransformOrigin="0.76,0.555" ToolTipOpening="Button_ToolTipOpening">
+                    <Button x:Name="button201" HorizontalAlignment="Left" Margin="48.75,54.123,0,0" VerticalAlignment="Top" Width="82.75" Height="43" Style="{StaticResource RoomButton}" ToolTipOpening="Button_ToolTipOpening" Click="form6_roomBtn_Click"/>
+                    <Button x:Name="button202" HorizontalAlignment="Left" Margin="48.75,97.123,0,0" VerticalAlignment="Top" Width="82.75" Height="43" Style="{StaticResource RoomButton}" ToolTipOpening="Button_ToolTipOpening" Click="form6_roomBtn_Click"/>
+                    <Button x:Name="button203" HorizontalAlignment="Left" Margin="48.75,142.873,0,0" VerticalAlignment="Top" Width="82.75" Height="52" Style="{StaticResource RoomButton}" ToolTipOpening="Button_ToolTipOpening" Click="form6_roomBtn_Click"/>
+                    <Button x:Name="button204" HorizontalAlignment="Left" Margin="48.75,0,0,155.667" VerticalAlignment="Bottom" Width="82.75" Height="37.5" Style="{StaticResource RoomButton}"  ToolTipOpening="Button_ToolTipOpening" Click="form6_roomBtn_Click"/>
+                    <Button x:Name="button206" Margin="275.414,35.714,382.225,0" VerticalAlignment="Top" Height="51.335" Style="{StaticResource RoomButton}" RenderTransformOrigin="0.76,0.555" ToolTipOpening="Button_ToolTipOpening" Click="form6_roomBtn_Click">
                         <Button.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform ScaleX="1.003"/>
@@ -211,7 +198,7 @@
                             </TransformGroup>
                         </Button.RenderTransform>
                     </Button>
-                    <Button x:Name="button207" Margin="348.35,64.788,342.156,0" VerticalAlignment="Top" Height="48.882" Style="{StaticResource RoomButton}" RenderTransformOrigin="0.76,0.555" ToolTipOpening="Button_ToolTipOpening">
+                    <Button x:Name="button207" Margin="348.35,64.788,342.156,0" VerticalAlignment="Top" Height="48.882" Style="{StaticResource RoomButton}" RenderTransformOrigin="0.76,0.555" ToolTipOpening="Button_ToolTipOpening" Click="form6_roomBtn_Click">
                         <Button.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform ScaleX="1.003"/>
@@ -221,7 +208,7 @@
                             </TransformGroup>
                         </Button.RenderTransform>
                     </Button>
-                    <Button x:Name="button208" Margin="381.29,98.689,309.216,0" VerticalAlignment="Top" Height="43.88" Style="{StaticResource RoomButton}" RenderTransformOrigin="0.76,0.555" ToolTipOpening="Button_ToolTipOpening">
+                    <Button x:Name="button208" Margin="381.29,98.689,309.216,0" VerticalAlignment="Top" Height="43.88" Style="{StaticResource RoomButton}" RenderTransformOrigin="0.76,0.555" ToolTipOpening="Button_ToolTipOpening" Click="form6_roomBtn_Click">
                         <Button.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform ScaleX="1.003"/>
@@ -231,7 +218,7 @@
                             </TransformGroup>
                         </Button.RenderTransform>
                     </Button>
-                    <Button x:Name="button209" Margin="0,129.878,275.768,0" VerticalAlignment="Top" Height="44.49" Style="{StaticResource RoomButton}" RenderTransformOrigin="0.76,0.555" HorizontalAlignment="Right" Width="77.168" ToolTipOpening="Button_ToolTipOpening">
+                    <Button x:Name="button209" Margin="0,129.878,275.768,0" VerticalAlignment="Top" Height="44.49" Style="{StaticResource RoomButton}" RenderTransformOrigin="0.76,0.555" HorizontalAlignment="Right" Width="77.168" ToolTipOpening="Button_ToolTipOpening" Click="form6_roomBtn_Click">
                         <Button.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform ScaleX="1.003"/>
@@ -241,17 +228,19 @@
                             </TransformGroup>
                         </Button.RenderTransform>
                     </Button>
-                    <Button x:Name="button210" HorizontalAlignment="Right" Margin="0,142.873,203.666,177.5" Style="{DynamicResource Button112}" Width="127" Content="" ToolTip=""  ToolTipOpening="Button_ToolTipOpening"/>
-                    <Button x:Name="button205" HorizontalAlignment="Left" Margin="40.833,0,0,25.167" Style="{DynamicResource Button205}" VerticalAlignment="Bottom" Width="120" Height="137.666" ToolTip=""  ToolTipOpening="Button_ToolTipOpening" />
-                    <Button x:Name="button211" HorizontalAlignment="Right" Margin="0,202.873,106.833,37.667" Style="{DynamicResource Button211}" Width="154.334" ToolTip=""  ToolTipOpening="Button_ToolTipOpening"/>
+                    <Button x:Name="button210" HorizontalAlignment="Right" Margin="0,142.873,203.666,177.5" Style="{DynamicResource Button112}" Width="127" Content="" ToolTip=""  ToolTipOpening="Button_ToolTipOpening" Click="form6_roomBtn_Click"/>
+                    <Button x:Name="button205" HorizontalAlignment="Left" Margin="39,0,0,13" Style="{DynamicResource Button205}" VerticalAlignment="Bottom" Width="120" Height="138" ToolTip=""  ToolTipOpening="Button_ToolTipOpening" Click="form6_roomBtn_Click"/>
+                    <Button x:Name="button211" HorizontalAlignment="Right" Margin="0,205,106,36" Style="{DynamicResource Button211}" Width="154" ToolTip=""  ToolTipOpening="Button_ToolTipOpening" Click="form6_roomBtn_Click"/>
 
                 </Grid>
             </TabItem>
-           
+
         </TabControl>
 
         <Label x:Name="selection_label" FontWeight="SemiBold"   HorizontalAlignment="Left" Margin="555,170,0,0" VerticalAlignment="Top"  Style="{DynamicResource LabelStyle}" Foreground="#FF3169B9"/>
         <Button x:Name="form6_button_bookNow" Content="Book Now" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140"  Click="form6_button_bookNow_Click" Height="25" Background="#FF7BADCF" Margin="555,225,0,0" Visibility="Hidden"/>
+
+
         <DatePicker x:Name="arrivalDate" Text="Arrival" HorizontalAlignment="Left" VerticalAlignment="Top" Width="164" Height="23" IsTodayHighlighted="True" Margin="95,60,0,0" Foreground="#FF333333" DisplayDateStart="2010-01-01" SelectedDateChanged="arrivalDate_SelectedDateChanged" BorderBrush="{x:Null}"/>
         <Label Content="Arrival" HorizontalAlignment="Left" Margin="26,60,0,0" VerticalAlignment="Top" Width="52"/>
         <Label Content="Departure" HorizontalAlignment="Left" Margin="284,59,0,0" VerticalAlignment="Top" Width="66"/>
@@ -260,5 +249,15 @@
         <local:logout HorizontalAlignment="Left" Margin="685,28,0,0" VerticalAlignment="Top"/>
         <local:back_button HorizontalAlignment="Left" Margin="26,28,0,0" VerticalAlignment="Top"/>
         <Label x:Name="form6_label_user"  HorizontalContentAlignment="Right" FontWeight="SemiBold"  Margin="585,28,56,0" VerticalAlignment="Top" Width="95" Style="{DynamicResource LabelStyle}" Height="27"/>
+        <Grid x:Name="color_legend" Visibility="Hidden" Margin="58,-5,-58,5">
+            <Rectangle Fill="Red"  HorizontalAlignment="Left" Height="15" Margin="225,415,0,0" Stroke="Black" VerticalAlignment="Top" Width="34"/>
+        <Rectangle Fill="SteelBlue" HorizontalAlignment="Left" Height="15" Margin="225,435,0,0" Stroke="Black" VerticalAlignment="Top" Width="34"/>
+        <Rectangle Fill="Green" Opacity="0.6" HorizontalAlignment="Left" Height="15" Margin="225,455,0,0" Stroke="Black" VerticalAlignment="Top" Width="34"/>
+        <Rectangle Fill="DarkGreen" HorizontalAlignment="Left" Height="15" Margin="225,475,0,0" Stroke="Black" VerticalAlignment="Top" Width="34"/>
+        <Label Content="Discounted room" HorizontalAlignment="Left" Margin="275,429,0,0" VerticalAlignment="Top"/>
+        <Label Content="Occupied room" HorizontalAlignment="Left" Margin="275,410,0,0" VerticalAlignment="Top"/>
+        <Label Content="Your selection" HorizontalAlignment="Left" Margin="275,449,0,0" VerticalAlignment="Top"/>
+        <Label Content="Your reservations" HorizontalAlignment="Left" Margin="275,469,0,0" VerticalAlignment="Top"/>
+        </Grid>
     </Grid>
 </Window>
